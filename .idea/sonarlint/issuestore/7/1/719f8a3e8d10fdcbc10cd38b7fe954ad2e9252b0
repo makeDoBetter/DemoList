@@ -1,0 +1,11 @@
+
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(Äàµåıÿÿÿÿ8¶àÏï§.
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÃÎ€öùÿÿÿÿ8¶àÏï§.
+isquid:CommentedOutCodeLine+"<This block of commented-out lines of code should be removed.(ÄÈ¨ï8¶àÏï§.
+[
+squid:S106$"9Replace this use of System.out or System.err by a logger.(¸Ñ®‡üÿÿÿÿ8¶àÏï§.
+Ssquid:S1191"5Use classes from the Java API instead of Sun classes.(éª‚€8¶àÏï§.
+[
+squid:S106/"9Replace this use of System.out or System.err by a logger.(Ãàñøÿÿÿÿ8¶àÏï§.

@@ -1,0 +1,6 @@
+
+[
+squid:S106!"9Replace this use of System.out or System.err by a logger.(Å­Ëİúÿÿÿÿ8¶àÏï§.
+nsquid:S2095"PUse try-with-resources or close this "OutputStreamWriter" in a "finally" clause.(·‘ã8¶àÏï§.
+rsquid:S2095"OUse try-with-resources or close this "InputStreamReader" in a "finally" clause.(õ‰¹ÿÿÿÿÿ8¶àÏï§.
+dsquid:S1075"ARefactor your code to get this URI from a customizable parameter.(¤»Ñùÿÿÿÿ8¶àÏï§.

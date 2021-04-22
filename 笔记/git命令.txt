@@ -1,0 +1,28 @@
+﻿Command line instructions
+
+Git global setup
+	git config --global user.name "冯吉荣"
+	git config --global user.email "jirong.feng@hand-china.com"
+	
+Create a new repository
+	git clone git@code.choerodon.com.cn:c7nui-train-2020se01/se01-24751-fengjirong-.git
+	cd server-9211-zhanghongchen
+	touch README.md
+	git add README.md
+	git commit -m "add README"
+	git push -u origin master
+	
+Existing folder
+	cd existing_folder
+	git init
+	git remote add origin git@code.choerodon.com.cn:c7nui-train-2020se01/se03-24751-fengjirong.git
+	git add .
+	git commit -m "c7n作业提交"
+	git push -u origin master
+	
+Existing Git repository
+	cd existing_repo
+	git remote rename origin old-origin
+	git remote add origin git@code.choerodon.com.cn:hzero-2020se01/server-9211-zhanghongchen.git
+	git push -u origin --all
+	git push -u origin --tags

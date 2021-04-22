@@ -1,0 +1,6 @@
+this is a FileWriter IO test;
+and it`s successfulthis is a FileWriter IO test;
+and it`s successfulthis is a FileWriter IO test;
+and it`s successful
+this is a FileWriter IO test;
+and it`s successful
