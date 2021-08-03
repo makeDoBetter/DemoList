@@ -1,0 +1,12 @@
+//proto版本
+syntax = "proto3";
+//编译获得的java类名
+option java_outer_classname = "StudentPOJO";
+//proto使用message管理数据
+//Student 作为内部类是真正的类
+message Student{
+    //int32 是proto种对应java中的数据类型
+    //1 不是默认值，而是表示序号
+    int32 id = 1;
+    string name = 2;
+}

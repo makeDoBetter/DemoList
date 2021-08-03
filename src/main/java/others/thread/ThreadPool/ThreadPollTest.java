@@ -65,7 +65,14 @@ public class ThreadPollTest {
         ExecutorService pool = new ThreadPoolExecutor(3, 10,
                 120L, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(1024),
                 getThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
-        //初始化任务
+        MyTask myTask = new MyTask();
+        pool.execute(myTask);
+        pool.execute(myTask);
+        pool.execute(myTask);
+        pool.execute(myTask);
+        pool.execute(myTask);
+        pool.execute(myTask);
+/*        //初始化任务
         Runnable task = new MyRunnable();
         //添加任务队列
         //任务1，创建新线程，提交后自动执行
@@ -85,7 +92,7 @@ public class ThreadPollTest {
         //不需要担心主线程的get()方法在实现子线程submit()前取不到值，
         // 即使get()先抢到线程，也会先将线程让给任务
         try {
-            System.out.println(f1.get());
+                   System.out.println(f1.get());
             System.out.println(f2.get());
             System.out.println(f3.get());
             System.out.println(f4.get());
@@ -93,7 +100,7 @@ public class ThreadPollTest {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
-        }
+            */
 
 
         //正常情况下线程池是不会消亡的
@@ -153,5 +160,14 @@ class MyCallable implements Callable<String> {
             sum += i;
         }
         return Thread.currentThread().getName() + " 计算0到" + this.n + "=" + sum;
+    }
+}
+
+class MyTask implements Runnable{
+    @Override
+    public void run() {
+        for (int i = 0; i < 10000; i++) {
+            System.out.println(Thread.currentThread().getName()+"===="+i);
+        }
     }
 }

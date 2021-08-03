@@ -1,13 +1,15 @@
-package others.netty.sample;
+package others.netty.codec;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
+import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.protobuf.ProtobufDecoder;
 
 /**
  * Description:Netty服务端，接收并打印客户端发送的消息并返回
@@ -45,7 +47,9 @@ public class NettyServer {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             //给通道绑定的管道最后维护一个处理器
-                            socketChannel.pipeline().addLast(new NettyServerHandler());
+                            ChannelPipeline pipeline = socketChannel.pipeline();
+                            pipeline.addLast("decoder", new ProtobufDecoder(StudentPOJO.Student.getDefaultInstance()));
+                            pipeline.addLast(new NettyServerHandler());
                         }
                     });
             System.out.println("服务端准备完毕--");

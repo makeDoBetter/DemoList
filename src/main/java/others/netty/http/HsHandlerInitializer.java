@@ -21,5 +21,6 @@ public class HsHandlerInitializer extends ChannelInitializer<SocketChannel> {
         //HttpServerCodec extends CombinedChannelDuplexHandler<HttpRequestDecoder, HttpResponseEncoder>
         pipeline.addLast(new HttpServerCodec());
         pipeline.addLast(new HttpSeverHandler());
+        System.out.println("入站处理器注册完成");
     }
 }

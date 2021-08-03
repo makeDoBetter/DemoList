@@ -21,7 +21,6 @@ public class HttpServer {
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(boss, worker)
                 .channel(NioServerSocketChannel.class)
-                .handler(null)
                 .childHandler(new HsHandlerInitializer());
         try {
             ChannelFuture future = serverBootstrap.bind(1234).sync();

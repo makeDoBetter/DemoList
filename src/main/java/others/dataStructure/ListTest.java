@@ -29,10 +29,7 @@ public class ListTest {
 
 	public static void main(String[] args) {
 		System.out.println("-----------------------ArrayList-------------------------");
-		ArrayList<Integer> arrayList = new ArrayList<>(16);
-		arrayList.add(1);
-		arrayList.add(2);
-		arrayList.add(3);
+		List<Integer> arrayList = Arrays.asList(1, 2, 3);
 		System.out.println(arrayList.size());
 		List<Integer> collect = arrayList.stream().map(integer ->
 				integer * integer).collect(Collectors.toList());
@@ -60,6 +57,8 @@ public class ListTest {
 		List list1 = new ArrayList<>(new LinkedHashSet<>(list));
 		System.out.println(list.toString());
 		System.out.println(list1.toString());
+		List<Integer> integers = Arrays.asList(14, 6, 34, 21, 3, 9, 11);
+		integers.stream().map(i -> i * 2).sorted().limit(4).forEach(System.out::println);
 
 
 	}
